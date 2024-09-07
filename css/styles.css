@@ -1,0 +1,177 @@
+/* Estilo para o calendário */
+body {
+    background: #DDDEE5;
+}
+
+p {
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.calendar,
+.index-calendar {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.mes-atual {
+    background-color: #4682B4;
+    color: white;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th {
+    background-color: #4682B4;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+    text-align: center;
+}
+
+.table td {
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    vertical-align: middle;
+    text-align: center;
+    width: 10em;
+    height: 30px; /* Altura fixa para as células */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura e altura total */
+    overflow: hidden; /* Garante que o conteúdo não exceda a célula */
+    white-space: nowrap; /* Impede quebra de linha */
+    text-decoration: none;
+}
+
+/* Dias de outros meses */
+.other-month {
+    color: #6c757d !important; /* Cor mais clara para dias de outros meses */
+    background-color: #DCDCDC !important; /* Fundo mais claro */
+}
+
+/* Dia da semana */
+.table th {
+    border-bottom: none;
+    max-width: 8em;
+}
+
+
+/* Estilo para os dias */
+.day {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.day:hover {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.today {
+    background-color: #f0ad4e !important; /* Cor para o dia corrente */
+    color: white;
+    font-weight: bold;
+}
+
+.today:hover {
+    color: #007bff;
+}
+
+/* Controles do calendário */
+#year-controls, #month-controls, #reset-controls, .controles-data {
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+
+/* Estilo do formulário */
+#goto-date-controls {
+    margin-top: .2em;
+}
+
+#goto-date-form {
+    display: flex;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#goto-date-form h4 {
+    font-weight: 700;
+    font-size: .95em;
+}
+
+.has-pdf {
+    cursor: pointer;
+}
+
+.has-pdf:hover {
+    color: #fff;
+    text-transform: none;
+}
+
+.pdf-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.pdf-icon {
+    color: #d9534f; /* Cor do ícone PDF */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.pdf-link {
+    flex: 1;
+    text-decoration: none;
+    color: #0275d8; /* Cor do link */
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: red;
+    color: white; /* Cor do botão ao passar o mouse */
+}
+
+#file-list {
+    max-width: 12em;
+    margin: 0 auto;
+}
+
+/* Modal Login */
+.modal-content {
+    background-color: #DDDEE5;
+}
+
+/* Estilo página Upload*/
+.upload-page {
+    max-width: 45%;
+    margin: 0 auto;
+}
+
+.input-date {
+    max-width: 10em;
+}
+
+.input-file {
+    max-width: 10em;
+}
+
