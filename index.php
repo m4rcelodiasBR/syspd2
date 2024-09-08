@@ -13,13 +13,24 @@
 </head>
 
 <body>
-    <div class="container mt-3">
+    <div class="banner">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="">
+                    Secretaria da Comissão de Promoções de Oficiais
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="col text-center index-calendar">
-                <h3 class="mb-3">Plano do Dia</h3>
-                <p class="mb-2"> Os dias com Plano do Dia disponível estão
-                    marcados com o ícone <span class="fs-5 bi bi-file-earmark-pdf-fill pdf-icon"></span></p>
-
+            <div class="col index-calendar">
+                <div class="text-center">
+                    <h3>Plano do Dia</h3>
+                    <p class="mb-2"> Os dias com Plano do Dia disponíveis estão
+                        marcados com o ícone <span class="fs-5 bi bi-file-earmark-pdf-fill pdf-icon"></span>
+                    </p>
+                </div>
                 <div class="controles-data">
                     <!-- Controles de Navegação do Ano -->
                     <div id="year-controls" class="controles-data d-flex justify-content-between align-items-center">
@@ -46,50 +57,54 @@
                 <!-- Exibição do Calendário -->
                 <div id="calendar" class="table-responsive"></div>
 
-                <!-- Botão para Ir para a Data Atual -->
-                <div id="reset-controls" class="mb-3">
-                    <button id="reset-date" class="btn btn-success">
-                        Data atual
-                        <span class="bi bi-calendar2-check"></span>
-                    </button>
-                </div>
-
-                <!-- Formulário para Ir para Data Específica -->
-                <div id="goto-date-controls" class="mt-3">
-                    <form id="goto-date-form" class="form-inline justify-content-center">
-                        <h4 class="me-3">
-                            Ir para data específica:
-                        </h4>
-                        <div class="form-group mb-2">
-                            <select id="goto-month" class="form-control">
-                                <option value="1">Janeiro</option>
-                                <option value="2">Fevereiro</option>
-                                <option value="3">Março</option>
-                                <option value="4">Abril</option>
-                                <option value="5">Maio</option>
-                                <option value="6">Junho</option>
-                                <option value="7">Julho</option>
-                                <option value="8">Agosto</option>
-                                <option value="9">Setembro</option>
-                                <option value="10">Outubro</option>
-                                <option value="11">Novembro</option>
-                                <option value="12">Dezembro</option>
-                            </select>
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="number" class="form-control" id="goto-year" placeholder="Ano" min="1900"
-                                max="2100">
-                        </div>
-                        <button type="submit" class="btn btn-goToDate mb-2">Ir</button>
-                    </form>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Botão para Ir para a Data Atual -->
+                    <div id="reset-controls">
+                        <button id="reset-date" class="btn btn-success btn-sm">
+                            Data atual
+                            <span class="bi bi-calendar2-check"></span>
+                        </button>
+                    </div>
+                    <!-- Formulário para Ir para Data Específica -->
+                    <div id="goto-date-controls">
+                        <form id="goto-date-form" class="form-inline">
+                            <h4 class="me-3">
+                                Ir para data específica:
+                            </h4>
+                            <div>
+                                <select id="goto-month" class="form-control form-control-sm">
+                                    <option value="1">Janeiro</option>
+                                    <option value="2">Fevereiro</option>
+                                    <option value="3">Março</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Maio</option>
+                                    <option value="6">Junho</option>
+                                    <option value="7">Julho</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                            </div>
+                            <div class="mx-sm-3">
+                                <input type="number" class="form-control form-control-sm" id="goto-year" placeholder="Ano" min="1900" max="2100">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-goToDate btn-sm">Ir</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- Login no sistema -->
-                <div class="mt-2">
-                    <span class="mx-2">Acesso para os administradores: </span>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
-                        <span class="bi bi-box-arrow-in-right"></span>
-                    </button>
+                <div class="text-center acesso-login">
+                    <div class="mt-3">
+                        <span class="me-2">Acesso para os administradores: </span>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Login
+                            <span class="bi bi-box-arrow-in-right"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -27,9 +27,12 @@ function renderPdfList(year, month) {
 
             // Nome do arquivo com link
             const link = document.createElement("a");
+            const day = file.replace(/\.pdf$/, "");
+            const mesFormatado = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
+            const linkFormatado = `Dia ${day}${mesFormatado[month]}`;
             link.href = `uploads/${year}/${String(month + 1).padStart(2, "0")}/${file}`;
             link.target = "_blank";
-            link.textContent = file.replace(/\.pdf$/, "");
+            link.textContent = linkFormatado;
             link.classList.add("pdf-link");
 
             // Botão de exclusão

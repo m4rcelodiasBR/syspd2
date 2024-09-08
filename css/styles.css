@@ -95,7 +95,6 @@ a {
 /* Controles do calendário */
 #year-controls,
 #month-controls,
-#reset-controls,
 .controles-data {
     margin: 0 auto;
 }
@@ -133,8 +132,6 @@ a {
 #goto-date-form {
     display: flex;
     align-items: center;
-    max-width: 90%;
-    margin: 0 auto;
 }
 
 #goto-date-form h4 {
@@ -191,16 +188,13 @@ a {
     margin: 0 auto;
 }
 
-/* Modal Login */
+.container-lista-pdfs {
+    border-left: 2px solid #000;
+}
+
 .modal-content,
 .offcanvas-content {
     background-color: #DDDEE5;
-}
-
-/* Estilo página Upload*/
-.upload-page {
-    max-width: 45%;
-    margin: 0 auto;
 }
 
 .input-date {
@@ -213,4 +207,21 @@ a {
 
 .offcanvas-header {
     border-bottom: 1px solid #000;
+}
+
+/* Banner */
+.banner {
+    background-color: #007bff;
+    min-height: 3em;
+}
+
+/* Estilo página Upload*/
+.upload-page {
+    max-width: 45%;
+    margin: 0 auto;
+}
+
+/* Acesso login DIV */
+.acesso-login {
+    border-top: 1px solid #000;
 }
