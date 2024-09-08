@@ -23,7 +23,7 @@ function renderPdfList(year, month) {
 
             // Ícone PDF
             const icon = document.createElement("i");
-            icon.classList.add("bi", "bi-file-earmark-pdf-fill", "pdf-icon");
+            icon.classList.add("fs-5", "bi", "bi-file-earmark-pdf-fill", "pdf-icon");
 
             // Nome do arquivo com link
             const link = document.createElement("a");
@@ -35,6 +35,7 @@ function renderPdfList(year, month) {
             // Botão de exclusão
             const deleteButton = document.createElement("button");
             deleteButton.classList.add(
+              "fs-5",
               "btn",
               "btn-danger",
               "btn-sm",

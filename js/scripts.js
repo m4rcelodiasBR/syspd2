@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cell.classList.add("has-pdf");
             cell.innerHTML = `<a href="uploads/${year}/${String(month + 1)
               .padStart(2, "0")}/${String(day).padStart(2, "0")}.pdf" target="_blank">
-              <span class="bi bi-file-earmark-pdf-fill pdf-icon"></span>${day}</a>
+              <span class="fs-5 bi bi-file-earmark-pdf-fill pdf-icon"></span>${day}</a>
               `;
           } else {
             cell.innerHTML = day; // Mantém o dia se não houver PDF
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     html += "</tr></tbody></table>";
     calendarElement.innerHTML = html;
-    
+
     renderPdfList(year, month);
   }
 

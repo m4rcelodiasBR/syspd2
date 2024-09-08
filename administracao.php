@@ -23,33 +23,43 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-8">
-                <div class="text-center">
+                <div>
+                    <h4 class="mb-0">Bem-vindo(a), <?php echo $_SESSION['fullname']; ?></h4>
+                    <h3 class="mb-2">Sistema Plano do Dia 2 - Administração</h3>
 
-                    <h3 class="mb-3">Sistema Plano do Dia 2 - Administração</h3>
+                    <button class="mb-2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal">
+                        Menu
+                        <span class="bi bi-menu-button-wide-fill"></span>
+                    </button>
 
-                    <div id="upload-controls" class="mb-3">
-                        <a href="upload-pd.php" class="btn btn-warning">Enviar PDF</a>
+                    <div class="controles-data">
+                        <!-- Controles de Navegação do Ano -->
+                        <div id="year-controls" class="controles-data d-flex justify-content-between align-items-center">
+                            <button id="prev-year" class="controles-btn">
+                                <span class="ps-3 fs-4 bi bi-rewind"></span>
+                            </button>
+                            <span id="current-year" class="fs-5 fw-bold controles-btn"></span>
+                            <button id="next-year" class="controles-btn">
+                                <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                            </button>
+                        </div>
+                        <!-- Controles de Navegação do Mês -->
+                        <div id="month-controls" class="d-flex justify-content-between align-items-center">
+                            <button id="prev-month" class="controles-btn">
+                                <span class="ps-3 fs-4 bi bi-rewind"></span>
+                            </button>
+                            <span id="current-month" class="fs-5 fw-bold controles-btn text-uppercase"></span>
+                            <button id="next-month" class="controles-btn">
+                                <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Exibição do Calendário -->
                     <div id="calendar" class="table-responsive"></div>
 
-                    <!-- Controles de Navegação do Mês -->
-                    <div id="month-controls" class="mb-3 d-flex justify-content-between">
-                        <button id="prev-month" class="btn btn-primary">Mês Anterior</button>
-                        <span id="current-month" class="mx-4"></span>
-                        <button id="next-month" class="btn btn-primary">Próximo Mês</button>
-                    </div>
-
-                    <!-- Controles de Navegação do Ano -->
-                    <div id="year-controls" class="mb-3 d-flex justify-content-between">
-                        <button id="prev-year" class="btn btn-primary">Ano Anterior</button>
-                        <span id="current-year" class="mx-5"></span>
-                        <button id="next-year" class="btn btn-primary">Próximo Ano</button>
-                    </div>
-
                     <!-- Botão para Ir para a Data Atual -->
-                    <div id="reset-controls" class="mb-3">
+                    <div id="reset-controls" class="text-center mb-2">
                         <button id="reset-date" class="btn btn-success">
                             Data atual
                             <span class="bi bi-calendar2-check"></span>
@@ -60,7 +70,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <div id="goto-date-controls" class="mt-3">
                         <form id="goto-date-form" class="form-inline justify-content-center">
                             <h4 class="me-3">Ir para Data Específica:</h4>
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-2">
                                 <select id="goto-month" class="form-control">
                                     <option value="1">Janeiro</option>
                                     <option value="2">Fevereiro</option>
@@ -76,23 +86,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                                     <option value="12">Dezembro</option>
                                 </select>
                             </div>
-                            <div class="form-group mx-sm-3 mb-3">
+                            <div class="form-group mx-sm-3 mb-2">
                                 <input type="number" class="form-control" id="goto-year" placeholder="Ano" min="1800"
                                     max="2500">
                             </div>
-                            <button type="submit" class="btn btn-info mb-3">Ir</button>
+                            <button type="submit" class="btn btn-goToDate mb-2">Ir</button>
                         </form>
-                    </div>
-                    <div class="text-center">
-                        <button class="mt-3 btn btn-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
-                            Sair do Sistema
-                            <span class="bi bi-box-arrow-right"></span>
-                        </button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-center">
-                <h3>Arquivos PDF do Mês</h3>
+                <h3>Planos do Dia do Mês</h3>
                 <div id="file-list" class="mt-4"></div>
             </div>
         </div>
@@ -146,9 +150,45 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <p>Deseja sair do sistema?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>
-                        <button type="button" class="btn btn-success" id="logoutSistema">Sim</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                            Não
+                            <span class="bi bi-emoji-frown"></span>
+                        </button>
+                        <button type="button" class="btn btn-success" id="logoutSistema">
+                            Sim
+                            <span class="bi bi-emoji-smile"></span>
+                        </button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Principal Off-Canvas -->
+        <div class="offcanvas offcanvas-end offcanvas-content" tabindex="-1" id="menuPrincipal" aria-labelledby="menuPrincipalLabel">
+            <div class="text-end mt-3 me-3">
+                <button class="btn btn-info">Ajuda</button>
+            </div>
+            <div class="offcanvas-header">
+                <h4 class="offcanvas-title">Menu SysPD2</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Aenean urna quam, finibus vitae sem eget, dictum tincidunt est.
+                    Praesent suscipit ultricies justo, vitae tincidunt orci imperdiet sit amet.
+                    Sed ultricies eros non massa rutrum, malesuada blandit odio dictum.
+                </p>
+                <div id="upload-controls" class="mt-2">
+                    <a href="upload-pd.php" class="btn btn-warning">
+                        Enviar Arquivo PDF
+                        <span class="bi bi-cloud-upload"></span>
+                        <span class="bi bi-file-earmark-pdf"></span>
+                    </a>
+                </div>
+                <div class="mt-2">
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        Sair do Sistema
+                        <span class="bi bi-box-arrow-right"></span>
+                    </button>
                 </div>
             </div>
         </div>

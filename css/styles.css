@@ -14,7 +14,7 @@ a {
 
 .calendar,
 .index-calendar {
-    max-width: 80%;
+    max-width: 60%;
     margin: 0 auto;
 }
 
@@ -31,7 +31,7 @@ a {
 }
 
 .table th {
-    background-color: #4682B4;
+    background-color: #0D1748;
     color: #fff;
     font-weight: bold;
     border-bottom: 2px solid #dee2e6;
@@ -39,22 +39,28 @@ a {
 }
 
 .table td {
-    padding: 10px;
+    padding: 1em;
     border: 1px solid #e9ecef;
     vertical-align: middle;
     text-align: center;
     width: 10em;
-    height: 30px; /* Altura fixa para as células */
-    box-sizing: border-box; /* Inclui o padding e a borda na largura e altura total */
-    overflow: hidden; /* Garante que o conteúdo não exceda a célula */
-    white-space: nowrap; /* Impede quebra de linha */
+    height: 30px;
+    /* Altura fixa para as células */
+    box-sizing: border-box;
+    /* Inclui o padding e a borda na largura e altura total */
+    overflow: hidden;
+    /* Garante que o conteúdo não exceda a célula */
+    white-space: nowrap;
+    /* Impede quebra de linha */
     text-decoration: none;
 }
 
 /* Dias de outros meses */
 .other-month {
-    color: #6c757d !important; /* Cor mais clara para dias de outros meses */
-    background-color: #DCDCDC !important; /* Fundo mais claro */
+    color: #6c757d !important;
+    /* Cor mais clara para dias de outros meses */
+    background-color: #DCDCDC !important;
+    /* Fundo mais claro */
 }
 
 /* Dia da semana */
@@ -63,10 +69,9 @@ a {
     max-width: 8em;
 }
 
-
 /* Estilo para os dias */
 .day {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
     border-radius: 5px;
 }
 
@@ -77,7 +82,8 @@ a {
 }
 
 .today {
-    background-color: #f0ad4e !important; /* Cor para o dia corrente */
+    background-color: #F9B831 !important;
+    /* Cor para o dia corrente */
     color: white;
     font-weight: bold;
 }
@@ -87,8 +93,35 @@ a {
 }
 
 /* Controles do calendário */
-#year-controls, #month-controls, #reset-controls, .controles-data {
+#year-controls,
+#month-controls,
+#reset-controls,
+.controles-data {
     margin: 0 auto;
+}
+
+.controles-data {
+    background-color: #0D1748;
+    color: #DDDEE5;
+    border-bottom: 2px solid #DDDEE5;
+}
+
+.controles-btn {
+    background-color: transparent;
+    color: #F9B831;
+    padding: .5em;
+    border: none;
+}
+
+.btn-goToDate {
+    border-radius: .375rem;
+    color: #F9B831;
+    background-color: #0D1748;
+}
+
+.btn-goToDate:hover {
+    color: #F9B831;
+    background-color: #3d456c;
 }
 
 
@@ -127,7 +160,8 @@ a {
 }
 
 .pdf-icon {
-    color: #d9534f; /* Cor do ícone PDF */
+    color: #d9534f;
+    /* Cor do ícone PDF */
     margin-right: 10px;
     font-weight: bold;
 }
@@ -135,7 +169,8 @@ a {
 .pdf-link {
     flex: 1;
     text-decoration: none;
-    color: #0275d8; /* Cor do link */
+    color: #0275d8;
+    /* Cor do link */
 }
 
 .delete-btn {
@@ -147,7 +182,8 @@ a {
 
 .delete-btn:hover {
     background-color: red;
-    color: white; /* Cor do botão ao passar o mouse */
+    color: white;
+    /* Cor do botão ao passar o mouse */
 }
 
 #file-list {
@@ -156,7 +192,8 @@ a {
 }
 
 /* Modal Login */
-.modal-content {
+.modal-content,
+.offcanvas-content {
     background-color: #DDDEE5;
 }
 
@@ -167,10 +204,13 @@ a {
 }
 
 .input-date {
-    max-width: 10em;
+    max-width: 6em;
 }
 
 .input-file {
     max-width: 10em;
 }
 
+.offcanvas-header {
+    border-bottom: 1px solid #000;
+}

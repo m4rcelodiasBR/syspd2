@@ -15,35 +15,36 @@
 <body>
     <div class="container mt-3">
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-center index-calendar">
                 <h3 class="mb-3">Plano do Dia</h3>
+                <p class="mb-2"> Os dias com Plano do Dia disponível estão
+                    marcados com o ícone <span class="fs-5 bi bi-file-earmark-pdf-fill pdf-icon"></span></p>
 
-                <div class="mb-3">
-                    <span class="mx-2">Para enviar os arquivos de PD, faça o</span>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
-                        <span class="bi bi-box-arrow-in-right"></span>
-                    </button>
+                <div class="controles-data">
+                    <!-- Controles de Navegação do Ano -->
+                    <div id="year-controls" class="controles-data d-flex justify-content-between align-items-center">
+                        <button id="prev-year" class="controles-btn">
+                            <span class="ps-3 fs-4 bi bi-rewind"></span>
+                        </button>
+                        <span id="current-year" class="fs-5 fw-bold controles-btn"></span>
+                        <button id="next-year" class="controles-btn">
+                            <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                        </button>
+                    </div>
+                    <!-- Controles de Navegação do Mês -->
+                    <div id="month-controls" class="d-flex justify-content-between align-items-center">
+                        <button id="prev-month" class="controles-btn">
+                            <span class="ps-3 fs-4 bi bi-rewind"></span>
+                        </button>
+                        <span id="current-month" class="fs-5 fw-bold controles-btn text-uppercase"></span>
+                        <button id="next-month" class="controles-btn">
+                            <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Exibição do Calendário -->
-                <div id="calendar" class="table-responsive index-calendar"></div>
-
-                <!-- Controles de Navegação do Mês -->
-                <div class="controles-data">
-                    <div id="month-controls" class="mb-3 d-flex justify-content-between">
-                        <button id="prev-month" class="btn btn-primary">Mês Anterior</button>
-                        <span id="current-month" class="mx-3"></span>
-                        <button id="next-month" class="btn btn-primary">Próximo Mês</button>
-                    </div>
-
-                    <!-- Controles de Navegação do Ano -->
-                    <div id="year-controls" class="mb-3 d-flex justify-content-between">
-                        <button id="prev-year" class="btn btn-primary">Ano Anterior</button>
-                        <span id="current-year" class="mx-3"></span>
-                        <button id="next-year" class="btn btn-primary">Próximo Ano</button>
-                    </div>
-                </div>
+                <div id="calendar" class="table-responsive"></div>
 
                 <!-- Botão para Ir para a Data Atual -->
                 <div id="reset-controls" class="mb-3">
@@ -79,13 +80,22 @@
                             <input type="number" class="form-control" id="goto-year" placeholder="Ano" min="1900"
                                 max="2100">
                         </div>
-                        <button type="submit" class="btn btn-info mb-2">Ir</button>
+                        <button type="submit" class="btn btn-goToDate mb-2">Ir</button>
                     </form>
+                </div>
+                <!-- Login no sistema -->
+                <div class="mt-2">
+                    <span class="mx-2">Acesso para os administradores: </span>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Login
+                        <span class="bi bi-box-arrow-in-right"></span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
