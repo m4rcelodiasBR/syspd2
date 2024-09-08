@@ -89,7 +89,6 @@ a {
 /* Controles do calendário */
 #year-controls, #month-controls, #reset-controls, .controles-data {
     margin: 0 auto;
-    max-width: 60%;
 }
 
 

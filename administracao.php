@@ -91,7 +91,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
                 </div>
             </div>
-            <div id="pdf-list" class="col-md-4 text-center">
+            <div class="col-md-4 text-center">
                 <h3>Arquivos PDF do Mês</h3>
                 <div id="file-list" class="mt-4"></div>
             </div>

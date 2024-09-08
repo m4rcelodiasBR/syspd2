@@ -1,101 +1,3 @@
-function renderCalendar(year, month) {
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
-  const daysInMonth = lastDay.getDate();
-  const startingDay = firstDay.getDay();
-  const endingDay = lastDay.getDay();
-
-  // Atualiza o texto do mês e ano
-  const monthNames = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
-  ];
-  currentYearElement.textContent = year;
-  currentMonthElement.textContent = monthNames[month];
-
-  let html = '<table class="table table-bordered">';
-  html += "<thead><tr>";
-  html +=
-    "<th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>";
-  html += "</tr></thead><tbody><tr>";
-
-  // Preenche as células vazias no início com os dias do mês anterior
-  const prevMonthLastDay = new Date(year, month, 0).getDate();
-  for (let i = 0; i < startingDay; i++) {
-    html += `<td class="other-month">${prevMonthLastDay - startingDay + i + 1
-      }</td>`;
-  }
-
-  // Função para verificar se o dia tem PDF
-  function hasPdf(year, month, day) {
-    const dateStr = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-    return fetch(`check_pdf.php?date=${encodeURIComponent(dateStr)}`)
-      .then((response) => response.text())
-      .then((data) => data.includes("Ver PDF"));
-  }
-
-  // Armazena as promessas de verificação de PDF para cada dia
-  const pdfChecks = [];
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const isToday =
-      year === today.getFullYear() &&
-      month === today.getMonth() &&
-      day === today.getDate();
-    let className = "day";
-    if (isToday) {
-      className += " today";
-    }
-
-    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(
-      day
-    ).padStart(2, "0")}`;
-    html += `<td class="${className}" data-date="${dateStr}">${day}</td>`;
-
-    // Adiciona a promessa de verificação de PDF para este dia
-    pdfChecks.push(
-      hasPdf(year, month + 1, day).then((hasPdf) => {
-        const cell = calendarElement.querySelector(`td[data-date="${dateStr}"]`);
-        if (hasPdf) {
-          cell.classList.add("has-pdf");
-          cell.innerHTML = `<a href="uploads/${year}/${String(month + 1)
-            .padStart(2, "0")}/${String(day).padStart(2, "0")}.pdf" target="_blank">
-            <span class="bi bi-file-earmark-pdf-fill pdf-icon"></span>${day}</a>
-            `;
-        } else {
-          cell.innerHTML = day; // Mantém o dia se não houver PDF
-        }
-      })
-    );
-
-    // Fecha a linha a cada 7 dias
-    if ((startingDay + day) % 7 === 0) {
-      html += "</tr><tr>";
-    }
-  }
-
-  // Preenche as células vazias no final com os dias do próximo mês
-  let nextMonthDay = 1;
-  for (let i = endingDay + 1; i <= 6; i++) {
-    html += `<td class="other-month">${nextMonthDay++}</td>`;
-  }
-
-  html += "</tr></tbody></table>";
-  calendarElement.innerHTML = html;
-
-  renderPdfList(year, month);
-}
-
 //Listando PDFs do mês
 function renderPdfList(year, month) {
   const fileListElement = document.getElementById("file-list");
@@ -190,44 +92,44 @@ if (confirmDeleteBtn) {
   });
 }
 
-  // Controle para excluir PDF
-  function deletePdf(year, month, file) {
-    fetch(`delete_pdf.php?year=${year}&month=${String(month).padStart(2, '0')}&file=${file}`, {
-      method: 'GET',
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          document.getElementById('deleteMessage').textContent = 'Arquivo excluído com sucesso!';
-          $('#confirmDeleteModal').modal('show');
-          renderPdfList(year, month - 1); // Atualiza a lista após exclusão
-        } else {
-          document.getElementById('deleteMessage').textContent = 'Erro ao excluir o arquivo.';
-          $('#confirmDeleteModal').modal('show');
-        }
-      })
-      .catch(error => {
-        console.error('Erro ao excluir PDF:', error);
+// Controle para excluir PDF
+function deletePdf(year, month, file) {
+  fetch(`delete_pdf.php?year=${year}&month=${String(month).padStart(2, '0')}&file=${file}`, {
+    method: 'GET',
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        document.getElementById('deleteMessage').textContent = 'Arquivo excluído com sucesso!';
+        $('#confirmDeleteModal').modal('show');
+        renderPdfList(year, month - 1); // Atualiza a lista após exclusão
+      } else {
         document.getElementById('deleteMessage').textContent = 'Erro ao excluir o arquivo.';
         $('#confirmDeleteModal').modal('show');
-      });
-  }
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao excluir PDF:', error);
+      document.getElementById('deleteMessage').textContent = 'Erro ao excluir o arquivo.';
+      $('#confirmDeleteModal').modal('show');
+    });
+}
 
 // Controle de logout
 document.getElementById("logoutSistema").addEventListener("click", function () {
-    console.log('Chamando logout');
-    fetch('logout.php', {
-      method: 'POST'
+  console.log('Chamando logout');
+  fetch('logout.php', {
+    method: 'POST'
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        window.location.href = '/syspd2';
+      } else {
+        alert('Erro ao efetuar logout');
+      }
     })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          window.location.href = '/syspd2';
-        } else {
-          alert('Erro ao efetuar logout');
-        }
-      })
-      .catch(error => {
-        console.error('Erro ao efetuar logout:', error);
-      });
-  });
+    .catch(error => {
+      console.error('Erro ao efetuar logout:', error);
+    });
+});

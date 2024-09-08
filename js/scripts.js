@@ -100,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     html += "</tr></tbody></table>";
     calendarElement.innerHTML = html;
+    
+    renderPdfList(year, month);
   }
 
   function resetToToday() {
@@ -176,6 +178,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // Renderiza o mês atual
   renderCalendar(currentYear, currentMonth);
-  // Renderiza a lista de PDFs para o mês atual
-  renderPdfList(currentYear, currentMonth);
 });
