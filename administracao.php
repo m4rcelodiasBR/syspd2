@@ -33,11 +33,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <div>
                     <h4 class="mb-0">Bem-vindo(a), <?php echo $_SESSION['fullname']; ?></h4>
                     <h3 class="mb-2">Sistema Plano do Dia 2 - Administração</h3>
-
-                    <button class="mb-2 btn btn-primary btn-sm px-4 w-25" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal">
-                        Menu
-                        <span class="bi bi-menu-button-wide-fill"></span>
-                    </button>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <button class="btn btn-primary btn-sm px-3 btn-size-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal">
+                            Menu
+                            <span class="bi bi-menu-button-wide-fill"></span>
+                        </button>
+                        <button class="btn btn-primary btn-sm px-3 btn-size-custom" type="button" data-bs-toggle="modal" data-bs-target="#modalSobre" aria-controls="modalSobre">
+                            Sobre
+                            <span class="bi bi-three-dots"></span>
+                        </button>
+                    </div>
 
                     <div class="controles-data">
                         <!-- Controles de Navegação do Ano -->
@@ -65,11 +70,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <!-- Exibição do Calendário -->
                     <div id="calendar" class="table-responsive"></div>
 
-                    <!-- Formulário para Ir para Data Específica -->
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <!-- Botão para Ir para a Data Atual -->
                         <div id="reset-controls">
-                            <button id="reset-date" class="btn btn-success btn-sm px-4">
+                            <button id="reset-date" class="btn btn-success btn-sm px-4 btn-size-custom">
                                 Data atual
                                 <span class="bi bi-calendar2-check"></span>
                             </button>
@@ -261,6 +265,26 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sobre -->
+    <div class="modal fade" id="modalSobre" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSobreLabel">Sobre o sistema SysPD2</h5>
+                    <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <p class="fw-lighter text-center text-secondary">
+                        Este sistema foi desenvolvido para facilitar o gerenciamento de arquivos PDF, utilizando Bootstrap 5 e as mais recentes tecnologias web. Ele permite o upload, visualização e exclusão de documentos de forma simples e segura, com navegação por meio de um calendário intuitivo. Além disso, conta com um sistema de autenticação para garantir que apenas usuários autorizados acessem funcionalidades críticas.
+                    </p>
+                </div>
+                <div class="modal-footer pt-0">
+                    <p class="fw-bolder">Versão 2.0</p>
                 </div>
             </div>
         </div>

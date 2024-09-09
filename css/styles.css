@@ -228,3 +228,7 @@ a {
 .acesso-login {
     border-top: 1px solid #000;
 }
+
+.btn-size-custom {
+    width: 10em;
+}
