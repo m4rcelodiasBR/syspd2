@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($fileExtension !== 'pdf' || $fileType !== 'application/pdf') {
             $message = "Apenas arquivos PDF são permitidos.";
             $type = "danger";
-            header("Location: upload-pd.php?message=" . urlencode($message) . "&type=" . urlencode($type));
+            header("Location: administracao.php?message=" . urlencode($message) . "&type=" . urlencode($type));
             exit;
         }
 
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['date']) && !empty($_POST['date'])) {
             $date = $_POST['date'];
             $fileDate = DateTime::createFromFormat('Y-m-d', $date);
-            
+
             if ($fileDate === false) {
                 $message = "Data inválida.";
                 $messageType = "danger";
@@ -60,10 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "Nenhum arquivo carregado ou erro no upload.";
         $messageType = "danger";
     }
-    header("Location: upload-pd.php?message=" . urlencode($message) . "&type=" . urlencode($messageType));
+    header("Location: administracao.php?message=" . urlencode($message) . "&type=" . urlencode($messageType));
     exit();
 } else {
-    header("Location: upload-pd.php");
+    header("Location: administracao.php");
     exit();
 }
-?>

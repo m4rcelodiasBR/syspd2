@@ -13,16 +13,14 @@
 </head>
 
 <body>
-    <div class="banner">
+    <header class="banner w-100">
         <div class="container">
             <div class="text-center">
-                <h3 class="">
-                    Secretaria da Comissão de Promoções de Oficiais
-                </h3>
+                <h3 class="py-3">Secretaria da Comissão de Promoções de Oficiais</h3>
             </div>
         </div>
-    </div>
-    <div class="container">
+    </header>
+    <main class="container">
         <div class="row">
             <div class="col index-calendar">
                 <div class="text-center">
@@ -97,7 +95,8 @@
                     </div>
                 </div>
                 <!-- Login no sistema -->
-                <div class="text-center acesso-login">
+                <hr class="bg-dark">
+                <div class="text-center mb-3">
                     <div class="mt-3">
                         <span class="me-2">Acesso para os administradores: </span>
                         <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">
@@ -108,7 +107,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+    <footer class="bg-primary text-light py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2024 Comissão de Promoções de Oficiais. Todos os direitos reservados.</p>
+                    <p class="mb-0">SysPD2 - Desenvolvido por Marcelo Dias</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">

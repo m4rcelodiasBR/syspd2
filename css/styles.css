@@ -14,8 +14,12 @@ a {
 
 .calendar,
 .index-calendar {
-    max-width: 60%;
+    max-width: 80%;
     margin: 0 auto;
+}
+
+.calendar-fixed {
+    table-layout: fixed;
 }
 
 .mes-atual {
@@ -39,12 +43,11 @@ a {
 }
 
 .table td {
-    padding: 1em;
     border: 1px solid #e9ecef;
     vertical-align: middle;
     text-align: center;
-    width: 10em;
-    height: 30px;
+    width: 14.28%;
+    height: 4em;
     /* Altura fixa para as células */
     box-sizing: border-box;
     /* Inclui o padding e a borda na largura e altura total */
@@ -212,7 +215,7 @@ a {
 /* Banner */
 .banner {
     background-color: #007bff;
-    min-height: 3em;
+    color: #fff;
 }
 
 /* Estilo página Upload*/
