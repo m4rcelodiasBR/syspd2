@@ -208,10 +208,6 @@ a {
     max-width: 10em;
 }
 
-.offcanvas-header {
-    border-bottom: 1px solid #000;
-}
-
 /* Banner */
 .banner {
     background-color: #007bff;
@@ -231,4 +227,8 @@ a {
 
 .btn-size-custom {
     width: 10em;
+}
+
+#modalUpload .modal-footer {
+    display: contents;
 }
