@@ -192,6 +192,7 @@ $(document).ready(function () {
     console.log("Message type:", type);
     // Configura o conteúdo e a classe do alerta no modal
     $('#modalMessage').text(message).removeClass('alert-success alert-danger').addClass(`alert-${type}`);
+    $('#modal-header').addClass(`bg-${type}`);
     console.log("Modal should be shown now.");
     // Exibe o modal
     $('#messageModal').modal('show');
@@ -202,3 +203,23 @@ $(document).ready(function () {
     console.log("Nenhuma mensagem encontrada.");
   }
 });
+
+function exibirFraseDoDia() {
+  fetch('get_frases.php')
+  .then(response => response.json())
+  .then(data => {
+      const fraseDoDiaElement = document.getElementById('frase-do-dia');
+      if (fraseDoDiaElement && data.frase) {
+          fraseDoDiaElement.textContent = data.frase;
+      } else {
+          console.error('Frase do dia não encontrada no JSON.');
+      }
+  })
+  .catch(error => {
+      console.error('Erro ao obter a frase do dia:', error);
+  });
+}
+// Chama a função quando a página carrega
+document.addEventListener('DOMContentLoaded', exibirFraseDoDia);
+
+

@@ -146,6 +146,11 @@ a {
     cursor: pointer;
 }
 
+.today.has-pdf:hover {
+    color: #d9534f;
+    text-transform: none;
+}
+
 .has-pdf:hover {
     color: #fff;
     text-transform: none;

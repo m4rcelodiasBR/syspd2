@@ -263,8 +263,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="modal fade" id="messageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="messageModalLabel">Informação</h5>
+                <div id="modal-header" class="modal-header text-light">
+                    <h5 class="modal-title" id="messageModalLabel">Mensagem</h5>
                     <button type="button" class="btn bg-light btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

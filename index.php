@@ -25,9 +25,7 @@
             <div class="col index-calendar">
                 <div class="text-center">
                     <h3>Plano do Dia</h3>
-                    <p class="mb-2"> Os dias com Plano do Dia disponíveis estão
-                        marcados com o ícone <span class="fs-5 bi bi-file-earmark-pdf-fill pdf-icon"></span>
-                    </p>
+                    <div id="frase-do-dia" class="text-success fst-italic fw-bold text-center mb-1"></div>
                 </div>
                 <div class="controles-data">
                     <!-- Controles de Navegação do Ano -->
@@ -58,7 +56,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <!-- Botão para Ir para a Data Atual -->
                     <div id="reset-controls">
-                        <button id="reset-date" class="btn btn-success btn-sm">
+                        <button id="reset-date" class="btn btn-warning btn-sm">
                             Data atual
                             <span class="bi bi-calendar2-check"></span>
                         </button>
@@ -89,7 +87,7 @@
                                 <input type="number" class="form-control form-control-sm" id="goto-year" placeholder="Ano" min="1900" max="2100">
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-goToDate btn-sm">Ir</button>
+                                <button type="submit" class="btn btn-goToDate btn-sm px-5">Ir</button>
                             </div>
                         </form>
                     </div>
@@ -99,7 +97,7 @@
                 <div class="text-center mb-3">
                     <div class="mt-3">
                         <span class="me-2">Acesso para os administradores: </span>
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
                             Login
                             <span class="bi bi-box-arrow-in-right"></span>
                         </button>
@@ -124,21 +122,24 @@
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success text-light">
                     <h5 class="modal-title" id="loginModalLabel">Efetuar login no SysPD2</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
                     <form id="login-form">
                         <div class="mb-3 form-floating">
-                            <input type="text" class="form-control" id="username" required placeholder="Usuário">
+                            <input type="text" class="form-control form-control-sm" id="username" required placeholder="Usuário">
                             <label for="username" class="form-label">Usuário</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="password" class="form-control" id="password" required placeholder="Senha">
+                            <input type="password" class="form-control form-control-sm" id="password" required placeholder="Senha">
                             <label for="password" class="form-label">Senha</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-success btn-lg">
+                            Login
+                            <span class="bi bi-box-arrow-in-right"></span>
+                        </button>
                     </form>
                 </div>
             </div>
