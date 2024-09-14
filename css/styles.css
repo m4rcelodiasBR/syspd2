@@ -47,7 +47,7 @@ a {
     vertical-align: middle;
     text-align: center;
     width: 14.28%;
-    height: 4em;
+    height: 3.5rem;
     /* Altura fixa para as células */
     box-sizing: border-box;
     /* Inclui o padding e a borda na largura e altura total */
@@ -236,4 +236,9 @@ a {
 
 #modalUpload .modal-footer {
     display: contents;
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
 }

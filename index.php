@@ -124,19 +124,19 @@
             <div class="modal-content">
                 <div class="modal-header bg-success text-light">
                     <h5 class="modal-title" id="loginModalLabel">Efetuar login no SysPD2</h5>
-                    <button type="button" class="btn btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-close bg-light btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
+                <div class="modal-body bg-success text-center">
                     <form id="login-form">
                         <div class="mb-3 form-floating">
-                            <input type="text" class="form-control form-control-sm" id="username" required placeholder="Usuário">
+                            <input type="text" class="form-control" id="username" required placeholder="Usuário">
                             <label for="username" class="form-label">Usuário</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="password" class="form-control form-control-sm" id="password" required placeholder="Senha">
+                            <input type="password" class="form-control" id="password" required placeholder="Senha">
                             <label for="password" class="form-label">Senha</label>
                         </div>
-                        <button type="submit" class="btn btn-success btn-lg">
+                        <button type="submit" class="px-5 btn btn-light">
                             Login
                             <span class="bi bi-box-arrow-in-right"></span>
                         </button>

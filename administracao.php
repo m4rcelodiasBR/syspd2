@@ -127,17 +127,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Modal de Exclusão -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-light">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirmar Exclusão</h5>
+            <div class="modal-content bg-danger">
+                <div class="modal-header text-light">
+                    <h5 class="modal-title" id="deleteModalLabel">ATENÇÃO</h5>
                     <button type="button" class="btn bg-light btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body fw-bold text-light">
                     Você tem certeza que deseja excluir este arquivo?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger btn-sm" id="confirmDeleteBtn">Excluir</button>
+                    <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning btn-sm" id="confirmDeleteBtn">Excluir</button>
                 </div>
             </div>
         </div>
@@ -280,18 +280,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Modal Sobre -->
     <div class="modal fade" id="modalSobre" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content bg-primary">
                 <div class="modal-header bg-primary text-light">
-                    <h5 class="modal-title" id="modalSobreLabel">Sobre o sistema SysPD2</h5>
+                    <h5 class="modal-title" id="modalSobreLabel">Sobre o SysPD2</h5>
                     <button type="button" class="btn btn-close bg-light btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="fw-lighter text-center text-secondary">
-                        Este sistema foi desenvolvido para facilitar o gerenciamento de arquivos PDF, utilizando Bootstrap 5 e as mais recentes tecnologias web. Ele permite o upload, visualização e exclusão de documentos de forma simples e segura, com navegação por meio de um calendário intuitivo. Além disso, conta com um sistema de autenticação para garantir que apenas usuários autorizados acessem funcionalidades críticas.
+                    <p class="text-light">
+                        Este sistema foi desenvolvido para facilitar o gerenciamento de arquivos PDF,
+                        utilizando Bootstrap 5 e as mais recentes tecnologias web. Ele permite o upload,
+                        visualização e exclusão de documentos de forma simples e segura, com navegação por
+                        meio de um calendário intuitivo. Além disso, conta com um sistema de autenticação para
+                        garantir que apenas usuários autorizados acessem funcionalidades críticas.
                     </p>
                 </div>
                 <div class="modal-footer pt-0">
-                    <p class="fw-bolder">Versão alpha-1.0</p>
+                    <p class="fw-bolder text-warning">Versão 2.1a</p>
                 </div>
             </div>
         </div>
