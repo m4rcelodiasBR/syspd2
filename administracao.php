@@ -121,7 +121,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
         </div>
     </main>
-    <footer class="bg-primary text-light py-2">
+    <footer class="text-light py-2">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -200,7 +200,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Menu Principal Off-Canvas -->
     <div class="offcanvas offcanvas-end offcanvas-content" tabindex="-1" id="menuPrincipal"
         aria-labelledby="menuPrincipalLabel">
-        <div class="offcanvas-header bg-primary text-light">
+        <div class="offcanvas-header text-light">
             <span class="fs-4 bi bi-menu-button-wide-fill me-2"></span>
             <h4 class="offcanvas-title">Menu SysPD2</h4>
             <button type="button" class="btn bg-light btn-close btn-sm" data-bs-dismiss="offcanvas"
@@ -248,7 +248,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         aria-labelledby="modalUploadLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-primary text-light">
+                <div class="modal-header text-light">
                     <h5 class="modal-title" id="logoutModalLabel">Enviar PD</h5>
                     <button type="button" class="btn bg-light btn-close btn-sm" data-bs-dismiss="modal"
                         aria-label="Close"></button>
@@ -298,8 +298,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Modal Sobre -->
     <div class="modal fade" id="modalSobre" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-primary">
-                <div class="modal-header bg-primary text-light">
+            <div class="modal-content">
+                <div class="modal-header text-light">
                     <h5 class="modal-title" id="modalSobreLabel">Sobre o SysPD2</h5>
                     <button type="button" class="btn btn-close bg-light btn-sm" data-bs-dismiss="modal"
                         aria-label="Close"></button>

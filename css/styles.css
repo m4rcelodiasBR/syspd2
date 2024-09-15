@@ -1,9 +1,16 @@
-/* Paleta de Cores */
-.color1 { color: #f2e8c4 };
-.color2 { color: #98d9b6 };
-.color3 { color: #3ec9a7 };
-.color4 { color: #2b879e };
-.color5 { color: #616668 };
+/* Paleta de Cores Opção A*/
+.colorA1 { background-color: #f2e8c4 };
+.colorA2 { background-color: #98d9b6 };
+.colorA3 { background-color: #3ec9a7 };
+.colorA4 { background-color: #2b879e };
+.colorA5 { background-color: #616668 };
+
+/* Paleta de Cores Opção B*/
+.colorB1 { background-color: #0474bc };
+.colorB2 { background-color: #e4d4ac };
+.colorB3 { background-color: #0474b4 };
+.colorB4 { background-color: #6392ae };
+.colorB5 { background-color: #bdb7a0 };
 
 @font-face {
     font-family: 'Octin College';
@@ -34,7 +41,7 @@
 }
 
 body {
-    background: #DDDEE5;
+    background: #f2e8c4;
 }
 
 p {
@@ -77,14 +84,19 @@ a {
 }
 
 .table th {
-    background-color: #0D1748;
+    background-color: #2b879e;
     color: #fff;
     font-weight: bold;
     text-align: center;
+    border: 1px solid #f2e8c4;
+    max-width: 8em;
+    font-family: 'Octin College';
+    font-weight: 400;
+    font-size: .8rem;
 }
 
 .table td {
-    border: 1px solid #DDDEE5;
+    border: 1px solid #f2e8c4;
     vertical-align: middle;
     text-align: center;
     width: 14.28%;
@@ -107,11 +119,6 @@ a {
     /* Fundo mais claro */
 }
 
-/* Dia da semana */
-.table th {
-    max-width: 8em;
-}
-
 /* Estilo para os dias */
 .day {
     transition: background-color 0.5s ease, color 0.5s ease;
@@ -124,14 +131,13 @@ a {
 }
 
 .today {
-    background-color: #F9B831 !important;
-    /* Cor para o dia corrente */
-    color: white;
+    background-color: #3ec9a7 !important;
+    color: #fff !important;
     font-weight: bold;
 }
 
 .today:hover {
-    color: #007bff;
+    color: #000 !important;
 }
 
 /* Controles do calendário */
@@ -139,25 +145,19 @@ a {
 #month-controls,
 .controles-data {
     margin: 0 auto;
-    border-bottom: 1px solid #DDDEE5;
+    border-top: 1px solid #f2e8c4;
 }
 
 .controles-data {
-    background-color: #0D1748;
+    background-color: #2b879e;
     color: #DDDEE5;
 }
 
 .controles-btn {
     background-color: transparent;
-    color: #F9B831;
+    color: #fff;
     border: none;
 }
-
-.btn-goToDate:hover {
-    color: #F9B831;
-    background-color: #3d456c;
-}
-
 
 /* Estilo do formulário */
 #goto-date-controls {
@@ -234,12 +234,17 @@ a {
 }
 
 .container-lista-pdfs-title {
-    background-color: #DDDEE5;
+    background-color: #f2e8c4;
 }
 
 .modal-content,
 .offcanvas-content {
-    background-color: #DDDEE5;
+    background-color: #f2e8c4;
+}
+
+.modal-header,
+.offcanvas-header{
+    background-color: #616668;
 }
 
 .input-date {
@@ -252,7 +257,7 @@ a {
 
 /* Banner */
 .banner {
-    background-color: #007bff;
+    background-color: #616668;
     color: #fff;
 }
 
@@ -278,4 +283,8 @@ a {
 .modal-header,
 .modal-footer {
     border: none;
+}
+
+footer {
+    background-color: #616668;
 }

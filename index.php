@@ -87,7 +87,7 @@
                                 <input type="number" class="form-control form-control-sm" id="goto-year" placeholder="Ano" min="1900" max="2100">
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-goToDate btn-sm px-5">Ir</button>
+                                <button type="submit" class="btn btn-primary btn-sm px-4">Ir</button>
                             </div>
                         </form>
                     </div>
@@ -106,7 +106,7 @@
             </div>
         </div>
     </main>
-    <footer class="bg-primary text-light py-2">
+    <footer class="text-light py-2">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
