@@ -1,7 +1,10 @@
 //Listando PDFs do mês
 function renderPdfList(year, month) {
   const fileListElement = document.getElementById("file-list");
-  fileListElement.innerHTML = "Carregando PDFs..."; // Mensagem enquanto carrega
+  const spinnerElement = document.getElementById("spinner");
+
+  spinnerElement.style.display = "block";
+  fileListElement.style.display = "none";
 
   fetch(
     `list_pdfs.php?year=${year}&month=${String(month + 1).padStart(2, "0")}`
@@ -73,6 +76,8 @@ function renderPdfList(year, month) {
       } else {
         fileListElement.innerHTML = "Nenhum PDF encontrado.";
       }
+      spinnerElement.style.display = "none";
+      fileListElement.style.display = "block";
     })
     .catch((error) => {
       console.error("Erro ao carregar PDFs:", error);

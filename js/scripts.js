@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (hasPdf) {
             cell.classList.add("has-pdf");
             cell.innerHTML = `<a href="uploads/${year}/${String(month + 1)
-              .padStart(2, "0")}/${String(day).padStart(2, "0")}.pdf" target="_blank">
+              .padStart(2, "0")}/${String(day).padStart(2, "0")}.pdf" target="_blank" title="Abrir PD do dia ${day}/${month + 1}">
               <span class="fs-5 bi bi-file-earmark-pdf-fill pdf-icon"></span>${day}</a>
               `;
           } else {

@@ -16,7 +16,7 @@
     <header class="banner w-100">
         <div class="container">
             <div class="text-center">
-                <h3 class="py-3">Secretaria da Comissão de Promoções de Oficiais</h3>
+                <h3 class="py-3 octin-font">Secretaria da Comissão de Promoções de Oficiais</h3>
             </div>
         </div>
     </header>
@@ -25,7 +25,7 @@
             <div class="col index-calendar">
                 <div class="text-center">
                     <h3>Plano do Dia</h3>
-                    <div id="frase-do-dia" class="text-success fst-italic fw-bold text-center mb-1"></div>
+                    <div id="frase-do-dia" class="text-success fw-bold text-center mb-1"></div>
                 </div>
                 <div class="controles-data">
                     <!-- Controles de Navegação do Ano -->
@@ -33,7 +33,7 @@
                         <button id="prev-year" class="controles-btn">
                             <span class="ps-3 fs-4 bi bi-rewind"></span>
                         </button>
-                        <span id="current-year" class="fs-5 fw-bold controles-btn"></span>
+                        <span id="current-year" class="octin-font controles-btn"></span>
                         <button id="next-year" class="controles-btn">
                             <span class="pe-3 fs-4 bi bi-fast-forward"></span>
                         </button>
@@ -43,7 +43,7 @@
                         <button id="prev-month" class="controles-btn">
                             <span class="ps-3 fs-4 bi bi-rewind"></span>
                         </button>
-                        <span id="current-month" class="fs-5 fw-bold controles-btn text-uppercase"></span>
+                        <span id="current-month" class="octin-font controles-btn"></span>
                         <button id="next-month" class="controles-btn">
                             <span class="pe-3 fs-4 bi bi-fast-forward"></span>
                         </button>
@@ -148,7 +148,7 @@
 
     <!-- jQuery e Bootstrap JS -->
     <script src="js/jquery-3.7.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <script src="js/scripts.js"></script>

@@ -1,4 +1,38 @@
-/* Estilo para o calendário */
+/* Paleta de Cores */
+.color1 { color: #f2e8c4 };
+.color2 { color: #98d9b6 };
+.color3 { color: #3ec9a7 };
+.color4 { color: #2b879e };
+.color5 { color: #616668 };
+
+@font-face {
+    font-family: 'Octin College';
+    src: url('../fonts/OctinCollegeRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Octin College';
+    src: url('../fonts/OctinCollegeBold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Octin College';
+    src: url('../fonts/OctinCollegeSemiBold.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Octin College';
+    src: url('../fonts/OctinCollegeLight.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
 body {
     background: #DDDEE5;
 }
@@ -10,6 +44,15 @@ p {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.btn,
+.form-control {
+    border-radius: 0;
+}
+
+.octin-font {
+    font-family: 'Octin College';
 }
 
 .calendar,
@@ -29,7 +72,6 @@ a {
 }
 
 .table {
-    width: 100%;
     border-collapse: separate;
     border-spacing: 0;
 }
@@ -38,12 +80,11 @@ a {
     background-color: #0D1748;
     color: #fff;
     font-weight: bold;
-    border-bottom: 2px solid #dee2e6;
     text-align: center;
 }
 
 .table td {
-    border: 1px solid #e9ecef;
+    border: 1px solid #DDDEE5;
     vertical-align: middle;
     text-align: center;
     width: 14.28%;
@@ -68,14 +109,12 @@ a {
 
 /* Dia da semana */
 .table th {
-    border-bottom: none;
     max-width: 8em;
 }
 
 /* Estilo para os dias */
 .day {
     transition: background-color 0.5s ease, color 0.5s ease;
-    border-radius: 5px;
 }
 
 .day:hover {
@@ -100,25 +139,18 @@ a {
 #month-controls,
 .controles-data {
     margin: 0 auto;
+    border-bottom: 1px solid #DDDEE5;
 }
 
 .controles-data {
     background-color: #0D1748;
     color: #DDDEE5;
-    border-bottom: 2px solid #DDDEE5;
 }
 
 .controles-btn {
     background-color: transparent;
     color: #F9B831;
-    padding: .5em;
     border: none;
-}
-
-.btn-goToDate {
-    border-radius: .375rem;
-    color: #F9B831;
-    background-color: #0D1748;
 }
 
 .btn-goToDate:hover {
@@ -197,7 +229,12 @@ a {
 }
 
 .container-lista-pdfs {
-    border-left: 2px solid #000;
+    max-height: 32rem;
+    overflow-y: auto;
+}
+
+.container-lista-pdfs-title {
+    background-color: #DDDEE5;
 }
 
 .modal-content,
