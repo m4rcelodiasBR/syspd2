@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="banner w-100">
+    <header class="w-100">
         <div class="container">
             <div class="text-center">
                 <h3 class="py-3 octin-font">Secretaria da Comissão de Promoções de Oficiais</h3>
@@ -24,28 +24,28 @@
         <div class="row">
             <div class="col index-calendar">
                 <div class="text-center">
-                    <h3>Plano do Dia</h3>
-                    <div id="frase-do-dia" class="text-success fw-bold text-center mb-1"></div>
+                    <h3 class="octin-font fw-bold pt-2">Plano do Dia</h3>
+                    <div id="frase-do-dia" class="frase-do-dia fw-bold text-center mb-1"></div>
                 </div>
                 <div class="controles-data">
                     <!-- Controles de Navegação do Ano -->
                     <div id="year-controls" class="controles-data d-flex justify-content-between align-items-center">
                         <button id="prev-year" class="controles-btn">
-                            <span class="ps-3 fs-4 bi bi-rewind"></span>
+                            <span class="controles-btn-arrows ps-3 fs-3 bi bi-rewind"></span>
                         </button>
-                        <span id="current-year" class="octin-font controles-btn"></span>
+                        <span id="current-year" class="fs-4 octin-font fw-bold controles-btn"></span>
                         <button id="next-year" class="controles-btn">
-                            <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                            <span class="controles-btn-arrows pe-3 fs-3 bi bi-fast-forward"></span>
                         </button>
                     </div>
                     <!-- Controles de Navegação do Mês -->
                     <div id="month-controls" class="d-flex justify-content-between align-items-center">
                         <button id="prev-month" class="controles-btn">
-                            <span class="ps-3 fs-4 bi bi-rewind"></span>
+                            <span class="controles-btn-arrows ps-3 fs-3 bi bi-rewind"></span>
                         </button>
-                        <span id="current-month" class="octin-font controles-btn"></span>
+                        <span id="current-month" class="fs-5 octin-font controles-btn"></span>
                         <button id="next-month" class="controles-btn">
-                            <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                            <span class="controles-btn-arrows pe-3 fs-3 bi bi-fast-forward"></span>
                         </button>
                     </div>
                 </div>
@@ -53,20 +53,18 @@
                 <!-- Exibição do Calendário -->
                 <div id="calendar" class="table-responsive"></div>
 
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="calendar-bottom-options d-flex justify-content-between align-items-center mb-3">
                     <!-- Botão para Ir para a Data Atual -->
                     <div id="reset-controls">
-                        <button id="reset-date" class="btn btn-warning btn-sm">
-                            Data atual
+                        <button id="reset-date" class="btn btn-primary btn-sm px-3">
+                            Hoje
                             <span class="bi bi-calendar2-check"></span>
                         </button>
                     </div>
                     <!-- Formulário para Ir para Data Específica -->
                     <div id="goto-date-controls">
                         <form id="goto-date-form" class="form-inline">
-                            <h4 class="me-3">
-                                Ir para data específica:
-                            </h4>
+                            <h4 class="me-3">Ir para:</h4>
                             <div>
                                 <select id="goto-month" class="form-control form-control-sm">
                                     <option value="1">Janeiro</option>
@@ -91,13 +89,9 @@
                             </div>
                         </form>
                     </div>
-                </div>
-                <!-- Login no sistema -->
-                <hr class="bg-dark">
-                <div class="text-center mb-3">
-                    <div class="mt-3">
-                        <span class="me-2">Acesso para os administradores: </span>
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <div>
+                        <span class="me-2">Acesso ao sistema: </span>
+                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">
                             Login
                             <span class="bi bi-box-arrow-in-right"></span>
                         </button>

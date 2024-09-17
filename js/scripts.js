@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let html = '<table class="table table-bordered">';
     html += "<thead><tr>";
     html +=
-      "<th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>";
+      "<th>Domingo</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th><th>Sábado</th>";
     html += "</tr></thead><tbody><tr>";
 
     // Preenche as células vazias no início com os dias do mês anterior
@@ -191,8 +191,8 @@ $(document).ready(function () {
     console.log("Message found:", message);
     console.log("Message type:", type);
     // Configura o conteúdo e a classe do alerta no modal
-    $('#modalMessage').text(message).removeClass('alert-success alert-danger').addClass(`alert-${type}`);
-    $('#modal-header').addClass(`bg-${type}`);
+    $('#modal-content').addClass(`bg-${type}`);
+    $('#modal-body').text(message).addClass('text-light');
     console.log("Modal should be shown now.");
     // Exibe o modal
     $('#messageModal').modal('show');
@@ -221,5 +221,22 @@ function exibirFraseDoDia() {
 }
 // Chama a função quando a página carrega
 document.addEventListener('DOMContentLoaded', exibirFraseDoDia);
+
+function updateClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  const timeString = `${hours}:${minutes}:${seconds}`;
+  
+  document.getElementById('clock').textContent = timeString;
+}
+
+// Atualiza o relógio a cada segundo
+setInterval(updateClock, 1000);
+
+// Chama a função ao carregar a página para não esperar 1 segundo
+updateClock();
 
 

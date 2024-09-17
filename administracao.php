@@ -32,34 +32,38 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="col-sm-8">
                 <div>
                     <h6 class="mb-0">Bem-vindo(a), <?php echo $_SESSION['fullname']; ?> ao</h6>
-                    <h3 class="mb-2">Sistema Plano do Dia 2 - Administração</h3>
+                    <h3 class="mb-2 octin-font fw-bold">Sistema Plano do Dia 2 - Administração</h3>
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <button class="btn btn-primary btn-sm px-3 btn-size-custom" type="button"
-                            data-bs-toggle="offcanvas" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal">
-                            Menu
-                            <span class="bi bi-menu-button-wide-fill"></span>
-                        </button>
+                        <div>
+                            <button class="btn btn-primary btn-sm px-3 btn-size-custom" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#menuPrincipal"
+                                aria-controls="menuPrincipal">
+                                Menu
+                                <span class="bi bi-menu-button-wide-fill"></span>
+                            </button>
+                        </div>
+                        <div id="clock" class="fw-bold btn btn-sm"></div>
                     </div>
 
                     <div class="controles-data">
                         <!-- Controles de Navegação do Ano -->
                         <div id="year-controls" class="d-flex justify-content-between align-items-center">
                             <button id="prev-year" class="controles-btn">
-                                <span class="ps-3 fs-4 bi bi-rewind"></span>
+                                <span class="controles-btn-arrows ps-3 fs-4 bi bi-rewind"></span>
                             </button>
-                            <span id="current-year" class="controles-btn octin-font"></span>
+                            <span id="current-year" class="fs-4 octin-font fw-bold controles-btn"></span>
                             <button id="next-year" class="controles-btn">
-                                <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                                <span class="controles-btn-arrows pe-3 fs-4 bi bi-fast-forward"></span>
                             </button>
                         </div>
                         <!-- Controles de Navegação do Mês -->
                         <div id="month-controls" class="d-flex justify-content-between align-items-center">
                             <button id="prev-month" class="controles-btn">
-                                <span class="ps-3 fs-4 bi bi-rewind"></span>
+                                <span class="controles-btn-arrows ps-3 fs-4 bi bi-rewind"></span>
                             </button>
-                            <span id="current-month" class="controles-btn octin-font"></span>
+                            <span id="current-month" class="fs-5 octin-font controles-btn"></span>
                             <button id="next-month" class="controles-btn">
-                                <span class="pe-3 fs-4 bi bi-fast-forward"></span>
+                                <span class="controles-btn-arrows pe-3 fs-4 bi bi-fast-forward"></span>
                             </button>
                         </div>
                     </div>
@@ -70,8 +74,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <!-- Botão para Ir para a Data Atual -->
                         <div id="reset-controls">
-                            <button id="reset-date" class="btn btn-success btn-sm px-4 btn-size-custom">
-                                Data atual
+                            <button id="reset-date" class="btn btn-primary btn-sm px-3 btn-size-custom">
+                                Hoje
                                 <span class="bi bi-calendar2-check"></span>
                             </button>
                         </div>
@@ -200,7 +204,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Menu Principal Off-Canvas -->
     <div class="offcanvas offcanvas-end offcanvas-content" tabindex="-1" id="menuPrincipal"
         aria-labelledby="menuPrincipalLabel">
-        <div class="offcanvas-header text-light">
+        <div class="offcanvas-header">
             <span class="fs-4 bi bi-menu-button-wide-fill me-2"></span>
             <h4 class="offcanvas-title">Menu SysPD2</h4>
             <button type="button" class="btn bg-light btn-close btn-sm" data-bs-dismiss="offcanvas"
@@ -279,17 +283,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Modal Confirmação de Upload -->
     <div class="modal fade" id="messageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content" id="modal-content">
                 <div id="modal-header" class="modal-header text-light">
                     <h5 class="modal-title" id="messageModalLabel">Mensagem</h5>
                     <button type="button" class="btn bg-light btn-close btn-sm" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div id="modalMessage" class="alert"></div>
+                <div id="modal-body" class="modal-body">
+                    <div id="modalMessage"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -299,13 +303,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="modal fade" id="modalSobre" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header text-light">
+                <div class="modal-header">
                     <h5 class="modal-title" id="modalSobreLabel">Sobre o SysPD2</h5>
                     <button type="button" class="btn btn-close bg-light btn-sm" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-light">
+                    <p class="text-dark">
                         Este sistema foi desenvolvido para facilitar o gerenciamento de arquivos PDF,
                         utilizando Bootstrap 5 e as mais recentes tecnologias web. Ele permite o upload,
                         visualização e exclusão de documentos de forma simples e segura, com navegação por
@@ -314,7 +318,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </p>
                 </div>
                 <div class="modal-footer pt-0">
-                    <p class="fw-bolder text-warning">Versão 2.1a</p>
+                    <p class="fw-bolder">Versão da Build: <span>2.0</span></p>
                 </div>
             </div>
         </div>

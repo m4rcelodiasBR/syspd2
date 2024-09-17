@@ -1,16 +1,14 @@
-/* Paleta de Cores Opção A*/
-.colorA1 { background-color: #f2e8c4 };
-.colorA2 { background-color: #98d9b6 };
-.colorA3 { background-color: #3ec9a7 };
-.colorA4 { background-color: #2b879e };
-.colorA5 { background-color: #616668 };
+/* Variáveis de Cores */
 
-/* Paleta de Cores Opção B*/
-.colorB1 { background-color: #0474bc };
-.colorB2 { background-color: #e4d4ac };
-.colorB3 { background-color: #0474b4 };
-.colorB4 { background-color: #6392ae };
-.colorB5 { background-color: #bdb7a0 };
+:root {
+    --primary-custom-color: #061440;
+    --secondary-custom-color: #038C3E;
+    --tertiary-custom-color: #F2AE30;
+    --background-custom-color: #B0B4BF;
+    --text-primary-custom-color: #0D0D0D;
+}
+
+/* Fontes personalizadas */
 
 @font-face {
     font-family: 'Octin College';
@@ -40,8 +38,26 @@
     font-style: normal;
 }
 
+/* Estilos das páginas */
+
+html,
 body {
-    background: #f2e8c4;
+    background: var(--background-custom-color);
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background-color: var(--primary-custom-color);
+    color: var(--background-custom-color);
 }
 
 p {
@@ -51,6 +67,11 @@ p {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.frase-do-dia {
+    color: var(--secondary-custom-color);
+    text-shadow: .04rem .04rem #000;
 }
 
 .btn,
@@ -72,23 +93,23 @@ a {
     table-layout: fixed;
 }
 
-.mes-atual {
-    background-color: #4682B4;
-    color: white;
-    border-bottom: 2px solid #dee2e6;
-}
-
 .table {
     border-collapse: separate;
-    border-spacing: 0;
+    border-spacing: .2rem;
+    border: none;
+}
+
+.table th,
+.table td {
+    border: none;
 }
 
 .table th {
-    background-color: #2b879e;
+    background-color: var(--secondary-custom-color);
     color: #fff;
     font-weight: bold;
     text-align: center;
-    border: 1px solid #f2e8c4;
+    /*border: 1px solid #f2e8c4;*/
     max-width: 8em;
     font-family: 'Octin College';
     font-weight: 400;
@@ -96,7 +117,7 @@ a {
 }
 
 .table td {
-    border: 1px solid #f2e8c4;
+    /*border: 1px solid #f2e8c4;*/
     vertical-align: middle;
     text-align: center;
     width: 14.28%;
@@ -113,9 +134,9 @@ a {
 
 /* Dias de outros meses */
 .other-month {
-    color: #6c757d !important;
+    background-color: var(--background-custom-color) !important;
     /* Cor mais clara para dias de outros meses */
-    background-color: #DCDCDC !important;
+    color: var(--text-primary-custom-color) !important;
     /* Fundo mais claro */
 }
 
@@ -131,26 +152,35 @@ a {
 }
 
 .today {
-    background-color: #3ec9a7 !important;
-    color: #fff !important;
+    background-color: var(--tertiary-custom-color) !important;
+    color: var(--text-primary-custom-color) !important;
     font-weight: bold;
 }
 
 .today:hover {
-    color: #000 !important;
+    color: var(--secondary-custom-color) !important;
 }
 
 /* Controles do calendário */
 #year-controls,
-#month-controls,
-.controles-data {
+#month-controls {
     margin: 0 auto;
-    border-top: 1px solid #f2e8c4;
+    margin-left: .17rem;
+    margin-right: .17rem;
+    background-color: var(--primary-custom-color);
 }
 
-.controles-data {
-    background-color: #2b879e;
-    color: #DDDEE5;
+#year-controls {    
+    margin-bottom: .2rem;
+}
+
+.calendar-bottom-options {
+    margin-left: .17rem;
+    margin-right: .17rem;
+}
+
+.controles-btn-arrows {
+    color: var(--tertiary-custom-color);
 }
 
 .controles-btn {
@@ -179,7 +209,6 @@ a {
 }
 
 .today.has-pdf:hover {
-    color: #d9534f;
     text-transform: none;
 }
 
@@ -206,19 +235,22 @@ a {
 .pdf-link {
     flex: 1;
     text-decoration: none;
-    color: #0275d8;
-    /* Cor do link */
+    color: var(--primary-custom-color);
+}
+
+.pdf-link:hover {
+    font-weight: 700;
 }
 
 .delete-btn {
     background: none;
     border: none;
-    color: red;
+    color: #d9534f;
     cursor: pointer;
 }
 
 .delete-btn:hover {
-    background-color: red;
+    background-color: #d9534f;
     color: white;
     /* Cor do botão ao passar o mouse */
 }
@@ -234,17 +266,7 @@ a {
 }
 
 .container-lista-pdfs-title {
-    background-color: #f2e8c4;
-}
-
-.modal-content,
-.offcanvas-content {
-    background-color: #f2e8c4;
-}
-
-.modal-header,
-.offcanvas-header{
-    background-color: #616668;
+    background-color: var(--background-custom-color);
 }
 
 .input-date {
@@ -255,10 +277,17 @@ a {
     max-width: 10em;
 }
 
-/* Banner */
-.banner {
-    background-color: #616668;
-    color: #fff;
+.offcanvas-header,
+#modalUpload .modal-header,
+#modalSobre .modal-header {
+    background-color: var(--primary-custom-color);
+    color: var(--background-custom-color);
+}
+
+.offcanvas-content,
+.modal-content,
+#modalUpload .modal-body {
+    background-color: var(--background-custom-color);
 }
 
 /* Estilo página Upload*/
@@ -286,5 +315,12 @@ a {
 }
 
 footer {
-    background-color: #616668;
+    background-color: var(--primary-custom-color);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    color: var(--tertiary-custom-color);
 }
