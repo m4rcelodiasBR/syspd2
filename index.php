@@ -25,7 +25,7 @@
             <div class="col index-calendar">
                 <div class="text-center">
                     <h3 class="octin-font fw-bold pt-2">Plano do Dia</h3>
-                    <div id="frase-do-dia" class="frase-do-dia fw-bold text-center mb-1"></div>
+                    <div id="frase-do-dia" class="frase-do-dia fst-italic fw-bold text-center mb-1"></div>
                 </div>
                 <div class="controles-data">
                     <!-- Controles de Navegação do Ano -->

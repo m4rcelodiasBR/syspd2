@@ -31,7 +31,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="row">
             <div class="col-sm-8">
                 <div>
-                    <h6 class="mb-0">Bem-vindo(a), <?php echo $_SESSION['fullname']; ?> ao</h6>
+                    <h6 class="mb-0">Bem-vindo(a), <?php echo $_SESSION['fullname']; ?></h6>
                     <h3 class="mb-2 octin-font fw-bold">Sistema Plano do Dia 2 - Administração</h3>
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                                 <span class="bi bi-menu-button-wide-fill"></span>
                             </button>
                         </div>
-                        <div id="clock" class="fw-bold btn btn-sm"></div>
+                        <div id="clock" class="fw-bold btn btn-outline-primary btn-sm px-5"></div>
                     </div>
 
                     <div class="controles-data">
@@ -125,7 +125,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
         </div>
     </main>
-    <footer class="text-light py-2">
+    <footer class="py-2">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -329,7 +329,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
-                    <h5 class="modal-title" id="modalSobreLabel">Menu de ajuda do Sistema Plano do Dia 2</h5>
+                    <h5 class="modal-title" id="modalSobreLabel">Ajuda do Sistema Plano do Dia 2</h5>
                     <button type="button" class="btn btn-close bg-light btn-sm" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
@@ -348,16 +348,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                                 </ul>
                             </li>
                             <li>
-                                <strong>Acessar a Área Administrativa:</strong>
+                                <strong>Acessando a Área Administrativa:</strong>
                                 <p>Após inserir as credenciais corretamente, você será redirecionado para a área
-                                    administrativa, onde poderá gerenciar os arquivos PDF do Plano do Dia.</p>
+                                    administrativa, onde poderá gerenciar os arquivos PDF dos Planos do Dia.</p>
                             </li>
                         </ol>
-                        <h3>2. Upload de Arquivos</h3>
+                        <h5>2. Upload dos Arquivos PDF</h5>
                         <ol>
                             <li>
                                 <strong>Acesse a Seção de Upload:</strong>
-                                <p>No menu principal, clique no botão <em>Enviar Arquivo PDF</em>. Uma tela será exibida
+                                <p>No menu principal, clique no botão <em>Enviar Arquivo PDF</em>. Uma janela será exibida
                                     para que você selecione o arquivo.</p>
                             </li>
                             <li>
@@ -366,43 +366,41 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                             </li>
                             <li>
                                 <strong>Escolha o Arquivo:</strong>
-                                <p>Clique no botão <em>Selecionar Arquivo</em> e navegue até o PDF desejado em seu
+                                <p>Clique no botão <em>Selecionar Arquivo</em>, procure e selecione o PDF desejado em seu
                                     computador.</p>
                             </li>
                             <li>
                                 <strong>Confirme o Upload:</strong>
                                 <p>Após selecionar o arquivo, clique no botão <em>Upload</em>. Uma mensagem de
                                     confirmação será exibida, indicando que o arquivo foi enviado com sucesso.</p>
+                                <p>Caso uma mensagem de erro apareça, consulte o Administrador do Sistema (CPO-20).</p>
+                                <strong><em>Nota:</em></strong>
+                                <p>Cuidado com o tamanho do arquivo a ser enviado. Máximo é de 6MB.</p>
                             </li>
                         </ol>
-                        <h3>3. Gerenciar Arquivos PDF</h3>
+                        <h5>3. Gerenciar Arquivos PDF</h5>
                         <ol>
                             <li>
-                                <strong>Visualizar PDFs Enviados:</strong>
-                                <p>Todos os PDFs serão listados ao lado de acordo com o mês exibido na tela. Clique no
+                                <strong>Visualizando PDFs enviados:</strong>
+                                <p>Todos os PDFs serão listados ao lado de acordo com o mês exibido em tela. Clique no
                                     nome do arquivo para visualizar.</p>
                             </li>
                             <li>
-                                <strong>Excluir Arquivos:</strong>
+                                <strong>Excluindo Arquivos:</strong>
                                 <p>Para excluir um arquivo:</p>
                                 <ul>
                                     <li>Clique no ícone da lixeira ao lado do PDF.</li>
                                     <li>Uma confirmação será exibida.</li>
-                                    <li>Após confirmar a exclusão, o arquivo será movido para a lixeira e não será mais
+                                    <li>Após confirmar a exclusão, o arquivo será removido e não será mais
                                         visível na lista <em>Plano do Dia do Mês</em>.</li>
                                 </ul>
                             </li>
-                            <li>
-                                <strong>Restaurar Arquivos da Lixeira:</strong>
-                                <p>Se você deseja restaurar um arquivo excluído, vá até a pasta de <em>Lixeira</em> no
-                                    menu e mova o arquivo de volta para a pasta de uploads.</p>
-                            </li>
                         </ol>
-                        <h3>4. Ir para Data Específica</h3>
+                        <h5>4. Navegando para uma Data Específica</h5>
                         <ol>
                             <li>
                                 <strong>Selecione a Data:</strong>
-                                <p>Use o seletor de mês e ano na página de administração para escolher a data desejada.
+                                <p>Use o seletor de mês e ano no forumlário localizado abaixo do calendário para escolher a data desejada.
                                 </p>
                             </li>
                             <li>
@@ -410,13 +408,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                                 <p>O sistema listará automaticamente os PDFs enviados naquele mês específico.</p>
                             </li>
                         </ol>
-                        <h3>5. Configuração de Conta</h3>
-                        <p>Você pode alterar as configurações da sua conta, como senha ou outras informações pessoais,
-                            acessando o menu <em>Configurações</em>, localizado no canto superior direito.</p>
-                        <h3>6. Efetuando Logout</h3>
+                        <h5>5. Contas de Usuário</h5>
                         <ol>
                             <li>
-                                <strong>Clique em Logout:</strong>
+                                <p>Para cadastro e exclusão dos usuários, deve-se enviar um e-mail para o Administrador do Sistema,
+                                    solicitando as mudanças necessárias.</p>
+                            </li>
+                        </ol>
+                        <h5>6. Efetuando Logout</h5>
+                        <ol>
+                            <li>
+                                <strong>Clique em Sair do Sistema:</strong>
                                 <p>No canto superior direito, clique no botão <em>Logout</em>.</p>
                             </li>
                             <li>
@@ -427,8 +429,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         </ol>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Fechar</button>
+                <div class="modal-footer bg-warning">
+                    <button type="button" class="btn btn-primary btn-sm px-5" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>

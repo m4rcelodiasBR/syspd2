@@ -70,8 +70,7 @@ a {
 }
 
 .frase-do-dia {
-    color: var(--secondary-custom-color);
-    text-shadow: .04rem .04rem #000;
+    color: var(--primary-custom-color);
 }
 
 .btn,
@@ -80,7 +79,7 @@ a {
 }
 
 .octin-font {
-    font-family: 'Octin College';
+    font-family: 'Octin College', serif;
 }
 
 .calendar,
@@ -97,6 +96,7 @@ a {
     border-collapse: separate;
     border-spacing: .2rem;
     border: none;
+    margin-bottom: 0.5rem;
 }
 
 .table th,
@@ -111,8 +111,7 @@ a {
     text-align: center;
     /*border: 1px solid #f2e8c4;*/
     max-width: 8em;
-    font-family: 'Octin College';
-    font-weight: 400;
+    font-family: 'Octin College', serif;
     font-size: .8rem;
 }
 
@@ -164,9 +163,7 @@ a {
 /* Controles do calendário */
 #year-controls,
 #month-controls {
-    margin: 0 auto;
-    margin-left: .17rem;
-    margin-right: .17rem;
+    margin: 0 .17rem;
     background-color: var(--primary-custom-color);
 }
 
@@ -322,5 +319,5 @@ footer {
 }
 
 footer p {
-    color: var(--tertiary-custom-color);
+    color: var(--background-custom-color);
 }
